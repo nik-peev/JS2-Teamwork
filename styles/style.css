@@ -1,0 +1,10 @@
+/* CSS Document */
+html, body, canvas, div
+{
+	border: none;
+	margin: 0;
+	-ms-word-wrap: break-word;
+	padding: 0;
+	text-decoration: none;	
+	word-wrap: break-word;
+}
