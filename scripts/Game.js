@@ -211,7 +211,7 @@ var initialization = function () {
     createPlayer('images/player.gif', { x: 0, y: CANVAS_HEIGHT / 2 }, { w: 50, h: 50 });
 
     $(document).on('keyup', function (e) {
-        if (lastkeypress == 38 || lastkeypress == 40) {
+        if (lastkeypress == 38 || lastkeypress == 40 || lastkeypress == 37 || lastkeypress == 39) {
             player.animate = false;
         }
     });
@@ -223,7 +223,8 @@ var initialization = function () {
         }
     })
     $(document).on('keydown', function (e) {
-        if (e.keyCode == 38) {
+        
+		if (e.keyCode == 38) {
             lastkeypress = 38
             //move up
             player.movedim = { x: 0, y: -(speed + 3) };
@@ -234,6 +235,18 @@ var initialization = function () {
             lastkeypress = 40;
             //move down
             player.movedim = { x: 0, y: (speed + 3) };
+            player.animate = true;
+            e.preventDefault();
+        } else if (e.keyCode == 37) {
+            lastkeypress = 37;
+            //move down
+            player.movedim = { x: -(speed + 3), y: 0  };
+            player.animate = true;
+            e.preventDefault();
+        } else if (e.keyCode == 39) {
+            lastkeypress = 39;
+            //move down
+            player.movedim = { x: (speed + 3), y: 0 };
             player.animate = true;
             e.preventDefault();
         }
