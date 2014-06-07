@@ -33,6 +33,8 @@ function initialization () {
     });
 
     layer.add(health);
+    
+    initializeStats();
 
     createPlayer('images/player.gif', { x: 0, y: CANVAS_HEIGHT / 2 }, { w: 50, h: 50 });
     action(); 
@@ -45,6 +47,7 @@ function start () {
     playerAnimation.start();
     enemyAnimation.start();
     bulletAnimation.start();
+    updateScore.start();
     generateEnemies();
 };
 
