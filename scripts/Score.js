@@ -30,7 +30,7 @@ function initializeStats (){
 
 var updateScore = new Kinetic.Animation(function (frame) {
     try {
-        score = deadEnemies.length;
+        score = numberOfDeadEnemies;
         scoreBoard.setText('Score: ' + score);
         //TODO: fix enemies left when specified
         enemiesLeftBoard.setText('Enemies left: ' + enemiesLeft);

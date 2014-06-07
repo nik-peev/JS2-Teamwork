@@ -41,19 +41,22 @@ function createDeadEnemy (imagesource, position, dimension) {
             x: position.x,
             y: position.y,
             width: dimension.w,
-            height: dimension.h
+            height: dimension.h,
+            active: true
         });
     };
     imageObj.src = imagesource;
 };
 
 function generateEnemies() {
-   if (enemies.length - deadEnemies.length < numberOfEnemies) {
+   if (numberOfEnemies - numberOfDeadEnemies < maxEnemiesOnScreen) {
         createEnemy('images/enemy.png', { x: CANVAS_WIDTH -  getRandomInt(1,100) , y: getRandomInt(10, CANVAS_HEIGHT - 33) }, { w: 38, h: 33 }, getRandomInt(1, 1));
+        numberOfEnemies++;
     }
     else if(deadEnemies.length == 10) {
         // WIN
     } 
+
     window.requestAnimationFrame(generateEnemies)
 } 
 
@@ -75,16 +78,28 @@ var enemyAnimation = new Kinetic.Animation(function (frame) {
                 }
             }
         };
+
     } catch (err) { 
         console.log(err); 
     }
     
     try {
         deadEnemies.forEach(function (en) {
-            if (en != null && en.y < (CANVAS_HEIGHT + en.height)) {
-                if (en.dir == 'd') {
-                    en.img.move({ y: speed + 2 });
-                    en.y = en.y + speed + 2;
+            if (en != null) {
+                if (en.active && en.y < (CANVAS_HEIGHT + en.height)) {
+                    if (en.dir == 'd') {
+                        en.img.move({ y: speed + 2 });
+                        en.y = en.y + speed + 2;
+                    }
+                }
+                else
+                {
+                    en.active = false;
+                    en.img = null;
+                    var i = deadEnemies.indexOf(en);
+                    if(i != -1) { 
+                        deadEnemies.splice(i, 1); 
+                    }
                 }
             }
         });

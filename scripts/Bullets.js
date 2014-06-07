@@ -27,7 +27,7 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
     try {
         bullets.forEach(function (bullet) {
             if (bullet != null) {
-                if (bullet.x > -bullet.width && bullet.active) {
+                if (bullet.active && bullet.x > -bullet.width) {
                     bullet.img.move({ x: (speed + 3) });
                     bullet.x = bullet.x + (speed + 3);
 
@@ -36,10 +36,35 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
                             bullet.active = false;
                             enemy.active = false;
                             bullet.img.destroy();
+                            bullet.img = null;
                             enemy.img.destroy();
+                            enemy.img = null;
+
+                            var i = bullets.indexOf(bullet);
+                            if(i != -1) { 
+                                bullets.splice(i, 1); 
+                            }
+
+                            var i = enemies.indexOf(enemy);
+                            if(i != -1) { 
+                                enemies.splice(i, 1); 
+                            }
+
+                            numberOfDeadEnemies++;
+
                             createDeadEnemy("images/deadEnemy.png", { x: enemy.x, y: enemy.y }, { w: 38, h: 31 });
                         }
                     });
+                }
+                
+                if (bullet.x > 1500)  {
+                    bullet.active = false;
+                    bullet.img = null;
+
+                    var i = bullets.indexOf(bullet);
+                    if(i != -1) { 
+                        bullets.splice(i, 1); 
+                    }
                 }
             };
         });

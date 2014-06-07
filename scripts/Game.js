@@ -8,7 +8,9 @@ var layer, rect, stage,
     }),
     layer = new Kinetic.Layer(),	
 	enemies = [],
-    numberOfEnemies = 10,
+    maxEnemiesOnScreen = 10,
+    numberOfEnemies = 0;
+    numberOfDeadEnemies = 0;
 	deadEnemies = [],
 	bullets = [],
 	bullet = {},
