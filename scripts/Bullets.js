@@ -28,8 +28,8 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
         bullets.forEach(function (bullet) {
             if (bullet != null) {
                 if (bullet.active && bullet.x > -bullet.width) {
-                    bullet.img.move({ x: (speed + 3) });
-                    bullet.x = bullet.x + (speed + 3);
+                    bullet.img.move({ x: (speed + 6) });
+                    bullet.x = bullet.x + (speed + 6);
 
                     enemies.forEach(function (enemy) {
                         if (enemy.active && collides(bullet, enemy)) {

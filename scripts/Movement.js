@@ -9,7 +9,7 @@ function action() {
     $(document).keypress(function (e) {
         if (e.which == 32) {
             lastkeypress = 32;
-            createBullet('images/missle.gif', { x: player.pos.x, y: player.pos.y }, { w: 21, h: 9 });
+            createBullet('images/missle.gif', { x: player.pos.x, y: player.pos.y + 20 }, { w: 21, h: 9 });
         }
     });
 

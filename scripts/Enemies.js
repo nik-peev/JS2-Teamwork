@@ -18,7 +18,8 @@ function createEnemy (imagesource, position, dimension, speed) {
         width: dimension.w,
         height: dimension.h,
         active: true,
-        spd: speed
+        spd: speed + (Math.random() * 3),
+        bulletCreated: false
     });
 };
 
@@ -53,9 +54,6 @@ function generateEnemies() {
         createEnemy('images/enemy.png', { x: CANVAS_WIDTH -  getRandomInt(1,100) , y: getRandomInt(10, CANVAS_HEIGHT - 33) }, { w: 38, h: 33 }, getRandomInt(1, 1));
         numberOfEnemies++;
     }
-    else if(deadEnemies.length == 10) {
-        // WIN
-    } 
 
     window.requestAnimationFrame(generateEnemies)
 } 
@@ -64,17 +62,28 @@ var enemyAnimation = new Kinetic.Animation(function (frame) {
     try {
         for (var i = 0; i < enemies.length; i++) {
             en = enemies[i];
+            
             if (enemies[i].active) {
                 en.img.move({ x: -en.spd });
                 en.x = en.x - en.spd;
 
-                if (en.x < -en.width) {
-                    en.x = CANVAS_WIDTH + en.width;
-                    en.img.setPosition({ x: en.x });
-                    health.setWidth(health.getWidth() - 2);
-                    if (health.getWidth() <= 0) {
-                        lost();
+                if (en.x < -100)  {
+                    en.active = false;
+                    en.img = null;
+
+                    var i = enemies.indexOf(en);
+                    if(i != -1) { 
+                        enemies.splice(i, 1); 
                     }
+
+                    numberOfEnemies = numberOfEnemies - 1;
+                }
+
+                if (en.x < CANVAS_WIDTH/2) {
+                    if (en.bulletCreated === false) {
+                        en.bulletCreated = true;
+                        createEnemyBullet('images/enemyMissle.gif', { x: en.x, y: en.y + 20 }, { w: 21, h: 9 }, en.spd+2);
+                    };
                 }
             }
         };

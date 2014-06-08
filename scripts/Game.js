@@ -14,6 +14,8 @@ var layer, rect, stage,
 	deadEnemies = [],
 	bullets = [],
 	bullet = {},
+    enemyBullets = [],
+    enemyBullet = {},
 	player = {},
 	speed = 1,
 	lastkeypress = 0;
@@ -49,6 +51,7 @@ function start () {
     playerAnimation.start();
     enemyAnimation.start();
     bulletAnimation.start();
+    enemyBulletAnimation.start();
     updateScore.start();
     generateEnemies();
 };
