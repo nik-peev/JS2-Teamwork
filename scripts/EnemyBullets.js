@@ -44,8 +44,9 @@ var enemyBulletAnimation = new Kinetic.Animation(function (frame) {
 
                     health.setWidth(health.getWidth() - 5);
                     if (health.getWidth() <= 0) {
-                        window.alert("You lost");
-                        // window.open("gameover.html");
+                        //window.alert("You lost");
+                        //window.open("gameover.html");
+                        window.location.replace("gameover.html");
                     }                 
                 }
             };
