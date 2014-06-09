@@ -55,7 +55,7 @@ function generateEnemies() {
         numberOfEnemies++;
     }
 
-    window.requestAnimationFrame(generateEnemies)
+    window.requestAnimationFrame(generateEnemies);
 } 
 
 var enemyAnimation = new Kinetic.Animation(function (frame) {

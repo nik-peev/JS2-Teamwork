@@ -50,9 +50,11 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
                                 enemies.splice(i, 1); 
                             }
 
-                            var rndBonusGeneration = getRandomInt(1,10);
-                            if (rndBonusGeneration % 5 === 0) {
+                            var rndBonusGeneration = getRandomInt(1,5);
+                            if (rndBonusGeneration / 1 === 1) {
                                 drawHealthBonus(enemy.x, enemy.y);
+                            } else if (rndBonusGeneration / 2 === 1) {
+                                drawBoostScoreBonus(enemy.x, enemy.y);
                             }
 
                             numberOfDeadEnemies++;

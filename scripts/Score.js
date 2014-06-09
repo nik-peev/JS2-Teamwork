@@ -30,10 +30,14 @@ function initializeStats (){
 
 var updateScore = new Kinetic.Animation(function (frame) {
     try {
-        score = numberOfDeadEnemies;
+        score = numberOfDeadEnemies + bonusPoints;
         scoreBoard.setText('Score: ' + score);
-        //TODO: fix enemies left when specified
-        enemiesLeftBoard.setText('Enemies left: ' + enemiesLeft);
+
+        if (enemiesLeft - numberOfDeadEnemies > 0) {
+            enemiesLeftBoard.setText('Enemies left: ' + (enemiesLeft - numberOfDeadEnemies));
+        }else {
+             window.location.replace('victory.html');
+        }
     } catch (err) { 
         console.log(err); 
     }
