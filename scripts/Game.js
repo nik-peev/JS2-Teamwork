@@ -39,6 +39,7 @@ function initialization () {
     layer.add(health);
     
     initializeStats();
+    initializeBonus();
 
     createPlayer('images/player.gif', { x: 0, y: CANVAS_HEIGHT / 2 }, { w: 50, h: 50 });
     action(); 
@@ -53,6 +54,7 @@ function start () {
     bulletAnimation.start();
     enemyBulletAnimation.start();
     updateScore.start();
+    updateBonus.start();
     generateEnemies();
 };
 
