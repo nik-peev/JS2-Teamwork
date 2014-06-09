@@ -50,6 +50,11 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
                                 enemies.splice(i, 1); 
                             }
 
+                            var rndBonusGeneration = getRandomInt(1,10);
+                            if (rndBonusGeneration % 5 === 0) {
+                                drawHealthBonus(enemy.x, enemy.y);
+                            }
+
                             numberOfDeadEnemies++;
 
                             createDeadEnemy("images/deadEnemy.png", { x: enemy.x, y: enemy.y }, { w: 38, h: 31 });

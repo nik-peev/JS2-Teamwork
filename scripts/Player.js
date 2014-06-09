@@ -13,6 +13,7 @@ function createPlayer (imagesource, position, dimension) {
         layer.add(m);
         player = { img: m, pos: position, movedim: { x: 0, y: 0 }, dim: dimension, animate: false };
     };
+    
     imageObj.src = imagesource;
 }
 

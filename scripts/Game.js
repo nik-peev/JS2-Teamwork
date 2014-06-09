@@ -20,12 +20,12 @@ var layer, rect, stage,
 	speed = 1,
 	lastkeypress = 0;
 
-window.onload = function () {
+window.onload = function() {
     initialization();
     start();
 }; 
 
-function initialization () {
+function initialization() {
     health = new Kinetic.Rect({
         x: 5,
         y: 5,
@@ -39,7 +39,6 @@ function initialization () {
     layer.add(health);
     
     initializeStats();
-    initializeBonus();
 
     createPlayer('images/player.gif', { x: 0, y: CANVAS_HEIGHT / 2 }, { w: 50, h: 50 });
     action(); 
