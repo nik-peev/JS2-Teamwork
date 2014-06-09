@@ -1,3 +1,5 @@
+//Just a test commit with VS2013
+
 var bonusShape,
     bonusShapeRadius = 10,
     bonusShapeDisplacement = 50,
