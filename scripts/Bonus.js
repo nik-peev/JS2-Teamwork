@@ -2,6 +2,20 @@
 
 var allBonusObjects = [];
 var bonusPoints = 0;
+var movingBonuses = [];
+
+function createMovingBonus( destinationX, destinationY, bonus){
+
+    layer.add(bonus.bonusAsKineticObj);
+
+    console.log('Type:' + bonus.type);
+    console.log((destinationX - bonus.x)/100);
+    movingBonuses.push({ img: bonus.bonusAsKineticObj,
+        speedX: (destinationX - bonus.x)/100,
+        speedY: (destinationY - bonus.y)/100
+    });
+
+}
 
 function drawHealthBonus(x, y){
 
@@ -73,6 +87,12 @@ function isPlayerOnBonus(x, y, radius, strokeWidth) {
     return isOnY && (isOnFrontX || isOnBackX || isOnMiddleX);
 }
 
+var moveBonuses = new Kinetic.Animation(function (frame) {
+    for (var i = 0; i < movingBonuses.length; i++) {
+        movingBonuses[i].img.move({x:movingBonuses[i].speedX,y:movingBonuses[i].speedY})
+    }
+}, layer);
+
 var updateBonus = new Kinetic.Animation(function (frame) {
     try {
         if (player.img) {
@@ -81,6 +101,7 @@ var updateBonus = new Kinetic.Animation(function (frame) {
                     allBonusObjects[i].radius, allBonusObjects[i].strokeWidth)) {
 
                     if (allBonusObjects[i].type === 'health') {
+                        createMovingBonus(0,0,allBonusObjects[i]);
                         if (health.getWidth() + allBonusObjects[i].health > 100) {
                             health.setWidth(100);
                         }
@@ -90,9 +111,10 @@ var updateBonus = new Kinetic.Animation(function (frame) {
                     }
                     if (allBonusObjects[i].type === 'score-boost') {
                         bonusPoints += allBonusObjects[i].boost;
+                        createMovingBonus(0,0,allBonusObjects[i]);
                     }
 
-                    allBonusObjects[i].bonusAsKineticObj.remove();
+                    //allBonusObjects[i].bonusAsKineticObj.remove();
                     allBonusObjects.splice(i, 1);
                 }
             }

@@ -55,6 +55,7 @@ function start () {
     updateScore.start();
     updateBonus.start();
     moveParts.start();
+    moveBonuses.start();
     generateEnemies();
 };
 
