@@ -5,7 +5,7 @@ var bonusPoints = 0;
 
 function drawHealthBonus(x, y){
 
-    var healthBonus = kineticCircle(x, y, 10, '#5DFC0A', '#526F35', 5);
+    var healthBonus = kineticCircle(x, y, 10, '#FF1414', '#FF3B00', 5);
 
     allBonusObjects.push({
         bonusAsKineticObj: healthBonus, 
@@ -22,10 +22,10 @@ function drawHealthBonus(x, y){
 
 function drawBoostScoreBonus(x, y){
 
-    var healthBonus = kineticCircle(x, y, 10, '#FF1414', '#FF3B00', 5);
+    var scoreBonus = kineticCircle(x, y, 10, '#5DFC0A', '#526F35', 5);
 
     allBonusObjects.push({
-        bonusAsKineticObj: healthBonus, 
+        bonusAsKineticObj: scoreBonus, 
         type:'score-boost',
         x: x,
         y: y,
@@ -34,7 +34,7 @@ function drawBoostScoreBonus(x, y){
         boost: 30
     });
 
-    layer.add(healthBonus);
+    layer.add(scoreBonus);
 }
 
 function kineticCircle(x, y, radius, fill, stroke, strokeWidth) {

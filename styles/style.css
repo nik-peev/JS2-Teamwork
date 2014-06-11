@@ -1,5 +1,5 @@
 /* CSS Document */
-html, body, canvas, div
+html, body, div, svg, canvas
 {
 	border: none;
 	margin: 0;
@@ -7,5 +7,91 @@ html, body, canvas, div
 	padding: 0;
 	text-decoration: none;	
 	word-wrap: break-word;
+	background-position:center;
+}
+
+#game {
 	background-image: url('../images/mainbg.jpg');
+	background-position:left;
+}
+
+#mainPage {
+	background-image: url('../images/mainmenu.jpg');
+}
+
+#howTo {
+	background-image: url('../images/how-to.jpg');	 
+}
+
+#gameOver {
+	background-image: url('../images/gameover.jpg');	 
+}
+
+#victory {
+	background-image: url('../images/victory.jpg');	 
+}
+
+
+path {
+	stroke-width: 5px;	
+}
+
+.buttons {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:37px;
+	-moz-border-radius-topleft:37px;
+	border-top-left-radius:37px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:37px;
+	-moz-border-radius-bottomright:37px;
+	border-bottom-right-radius:37px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	height:65px;
+	line-height:65px;
+	width:143px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #528ecc;
+	position:relative;
+	bottom: 100px;
+}
+
+.buttons:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+}
+
+.retry-button {
+	left:570px;
+}
+
+.how-to-button {
+	left:630px;
+}
+
+.mp-button {
+	left:60px;
+}
+
+.back {
+	left: 570px;
 }
