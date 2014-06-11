@@ -54,6 +54,7 @@ function start () {
     enemyBulletAnimation.start();
     updateScore.start();
     updateBonus.start();
+    moveParts.start();
     generateEnemies();
 };
 
