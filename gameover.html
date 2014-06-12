@@ -28,11 +28,11 @@
     </svg>
 	</div>
 	<a href="index.html" class="retry-button buttons" onmouseover="playSound()">Retry</a>
-    <audio src="snd/gameover.wav" id="gameover" preload />
+    <audio src="snd/gameover.wav" id="gameovertheme" preload />
     <audio src="snd/menuselect.wav" id="menu" preload />
 	<script>
         window.onload = function(){
-            document.getElementById("gameover").cloneNode(true).play();
+            document.getElementById("gameovertheme").cloneNode(true).play();
         }
         function playSound(){
             document.getElementById("menu").cloneNode(true).play();

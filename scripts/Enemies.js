@@ -83,6 +83,7 @@ var enemyAnimation = new Kinetic.Animation(function (frame) {
                     if (en.bulletCreated === false) {
                         en.bulletCreated = true;
                         createEnemyBullet('images/enemyMissle.gif', { x: en.x, y: en.y + 20 }, { w: 21, h: 9 }, en.spd+2);
+                        document.getElementById("enemyfire").cloneNode(true).play();
                     };
                 }
             }

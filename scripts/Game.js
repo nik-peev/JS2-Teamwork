@@ -23,6 +23,7 @@ var layer, rect, stage,
 window.onload = function() {
     initialization();
     start();
+    document.getElementById("theme").play();
 }; 
 
 function initialization() {
