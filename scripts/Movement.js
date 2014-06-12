@@ -10,6 +10,9 @@ function action() {
         if (e.which == 32) {
             lastkeypress = 32;
             createBullet('images/missle.gif', { x: player.pos.x, y: player.pos.y + 20 }, { w: 21, h: 9 });
+            
+            //play fire sound
+            document.getElementById("fire").cloneNode(true).play();
         }
     });
 

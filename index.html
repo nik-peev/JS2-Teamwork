@@ -55,10 +55,18 @@
 		    </g>
 		</svg>
 	</div>
-	<a href="Game.html" class="retry-button buttons">Start New Game</a>
-	<a href="howtopage.html" class="how-to-button buttons">How to Play</a>
-	<a href="#" class="mp-button buttons">Credits</a>
+	<a href="Game.html" class="retry-button buttons" onmouseover="playSound()">Start New Game</a>
+	<a href="howtopage.html" class="how-to-button buttons" onmouseover="playSound()">How to Play</a>
+	<a href="#" class="mp-button buttons" onmouseover="playSound()">Credits</a>
+	<audio src="snd/menuselect.wav" id="menu" preload />
+	<audio src="snd/mooncrystals.mp3" id="theme" preload />
 	<script>
+		window.onload = function(){
+			document.getElementById("theme").cloneNode(true).play();
+		}
+		function playSound(){
+			document.getElementById("menu").cloneNode(true).play();
+		}
 		var container = document.getElementById('svg-container');
 	</script>
 </body>

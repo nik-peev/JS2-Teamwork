@@ -27,8 +27,16 @@
       </g>
     </svg>
 	</div>
-	<a href="index.html" class="retry-button buttons">Retry</a>
+	<a href="index.html" class="retry-button buttons" onmouseover="playSound()">Retry</a>
+    <audio src="snd/gameover.wav" id="gameover" preload />
+    <audio src="snd/menuselect.wav" id="menu" preload />
 	<script>
+        window.onload = function(){
+            document.getElementById("gameover").cloneNode(true).play();
+        }
+        function playSound(){
+            document.getElementById("menu").cloneNode(true).play();
+        }
 		var container = document.getElementById('svg-container');
 	</script>
 </body>

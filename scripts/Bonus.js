@@ -99,19 +99,21 @@ var updateBonus = new Kinetic.Animation(function (frame) {
             for (var i = 0; i < allBonusObjects.length; i++) {
                 if (isPlayerOnBonus(allBonusObjects[i].x, allBonusObjects[i].y,
                     allBonusObjects[i].radius, allBonusObjects[i].strokeWidth)) {
-
                     if (allBonusObjects[i].type === 'health') {
                         createMovingBonus(0,0,allBonusObjects[i]);
                         if (health.getWidth() + allBonusObjects[i].health > 100) {
                             health.setWidth(100);
+                            document.getElementById("bonus").cloneNode(true).play();
                         }
                         else {
                             health.setWidth(health.getWidth() + allBonusObjects[i].health);
+                            document.getElementById("bonus").cloneNode(true).play();
                         }
                     }
                     if (allBonusObjects[i].type === 'score-boost') {
                         bonusPoints += allBonusObjects[i].boost;
                         createMovingBonus(0,0,allBonusObjects[i]);
+                        document.getElementById("medikit").cloneNode(true).play();
                     }
 
                     //allBonusObjects[i].bonusAsKineticObj.remove();

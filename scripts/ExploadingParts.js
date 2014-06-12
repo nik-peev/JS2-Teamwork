@@ -18,6 +18,7 @@ function doSpectacularExplosion(x,y){
         });
 
         layer.add(p);
+        document.getElementById("boom").cloneNode(true).play();
 
         exploadedParts.push({ img: p,
             life: getRandomInt(0,100),
