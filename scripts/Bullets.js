@@ -49,7 +49,7 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
                             if(i != -1) { 
                                 enemies.splice(i, 1); 
                             }
-//                            doSpectacularExplosion(enemy.x, enemy.y)
+                            
                             var rndBonusGeneration = getRandomInt(1,5);
                             if (rndBonusGeneration  === 1) {
                                 drawHealthBonus(enemy.x, enemy.y);

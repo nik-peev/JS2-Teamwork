@@ -1,5 +1,3 @@
-//Just a test commit with VS2013
-
 var allBonusObjects = [];
 var bonusPoints = 0;
 var movingBonuses = [];
@@ -116,7 +114,6 @@ var updateBonus = new Kinetic.Animation(function (frame) {
                         document.getElementById("medikit").cloneNode(true).play();
                     }
 
-                    //allBonusObjects[i].bonusAsKineticObj.remove();
                     allBonusObjects.splice(i, 1);
                 }
             }

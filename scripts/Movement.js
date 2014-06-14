@@ -1,11 +1,4 @@
 function action() {
-    // Without that one the ship begin to move, can't stop, but moves smoothly
-/*    $(document).on('keyup', function (e) {
-        if (lastkeypress == 38 || lastkeypress == 40 || lastkeypress == 37 || lastkeypress == 39) {
-            player.animate = false;
-        }
-    });*/
-
     $(document).keypress(function (e) {
         if (e.which == 32) {
             lastkeypress = 32;

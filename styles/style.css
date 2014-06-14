@@ -19,7 +19,7 @@ html, body, div, svg, canvas
 	background-image: url('../images/mainmenu.jpg');
 }
 
-#howTo {
+#howTo, #credits{
 	background-image: url('../images/how-to.jpg');	 
 }
 
@@ -31,9 +31,28 @@ html, body, div, svg, canvas
 	background-image: url('../images/victory.jpg');	 
 }
 
+#credits strong {
+ 	font-size : 40pt;	
+}
+
+#credits p {
+ 	font-size : 20pt;	
+}
+
+#credits strong, #credits p{
+	color : #f8e34a;
+	font-family: 'PacFont Sans', 'Consolas';
+}
 
 path {
 	stroke-width: 5px;	
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align : center;
 }
 
 .buttons {
@@ -70,7 +89,7 @@ path {
 	text-align:center;
 	text-shadow:1px 1px 0px #528ecc;
 	position:relative;
-	bottom: 100px;
+	bottom: 0px;
 }
 
 .buttons:hover {
@@ -93,5 +112,9 @@ path {
 }
 
 .back {
-	left: 570px;
+	left: 600px;
+}
+
+.credits {
+	top : 100px;
 }

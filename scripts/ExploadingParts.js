@@ -3,8 +3,6 @@ var exploadedParts = [];
 
 function doSpectacularExplosion(x,y){
     var explosionPiecesCount = getRandomInt(3,7);
-    //console.log('Count:' + explosionPiecesCount);
-    //generating trajectories
     for (var i = 0; i < explosionPiecesCount; i++){
         var imageObj = new Image();
         imageObj.src = 'images/part.png';

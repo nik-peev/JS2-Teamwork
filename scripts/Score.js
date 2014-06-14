@@ -1,7 +1,6 @@
 var score = 0,
     scoreBoard,
-    //TODO: fix enemies left when specified
-    enemiesLeft = 100,
+    enemiesLeft = 50,
     enemiesLeftBoard;
 
 function initializeStats (){
