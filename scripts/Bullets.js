@@ -62,8 +62,10 @@ var bulletAnimation = new Kinetic.Animation(function (frame) {
 
                             numberOfDeadEnemies++;
 
-                            createDeadEnemy("images/deadEnemy.png", { x: enemy.x, y: enemy.y }, { w: 38, h: 31 });
-                            document.getElementById("enemydead").cloneNode(true).play();
+                            if (rndBonusGeneration  != 3) {
+                                createDeadEnemy("images/deadEnemy.png", { x: enemy.x, y: enemy.y }, { w: 38, h: 31 });
+                                document.getElementById("enemydead").cloneNode(true).play();
+                            }
                         }
                     });
                 }
